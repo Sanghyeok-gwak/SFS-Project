@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender class="ch.qos.logback.core.ConsoleAppender" name="consoleLog">
+		<encoder>
+			<pattern>%-5level: [%date] [%logger:%line] - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender class="ch.qos.logback.core.ConsoleAppender" name="websocketLog">
+		<encoder>
+			<pattern>[%date] - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	
+	<logger name="org.springframework" level="INFO"/>
+	<logger name="com.cl.cruella" level="DEBUG" />
+	<logger name="com.cl.cruella.handler" level="DEBUG" additivity="false">
+		<appender-ref ref="websocketLog" />
+	</logger>
+	
+	<logger name="jdbc.sqlonly" level="off" /> 	
+	<logger name="jdbc.sqltiming" level="off" />	
+	<logger name="jdbc.audit" level="off" />					
+	<logger name="jdbc.resultset" level="off" />		
+	<logger name="jdbc.resultsettable" level="off" />
+	<logger name="jdbc.connection" level="off" />	
+	
+	
+	<root level="WARN"> 
+		<appender-ref ref="consoleLog" />
+	</root>
+	
+	
+	
+	 
+</configuration>
