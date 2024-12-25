@@ -1,0 +1,45 @@
+package com.sf.sfs.interceptor;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.FlashMap;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.support.RequestContextUtils;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+
+@Component
+public class LoginCheckInterceptor implements HandlerInterceptor{
+
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("loginUser") != null) { 
+			return true; 
+		}else { 
+			// RedirectAttributes의 대안
+			FlashMap flashMap = new FlashMap();
+			flashMap.put("alertMsg","로그인 후 이용가능한 서비스입니다.");
+			RequestContextUtils.getFlashMapManager(request).saveOutputFlashMap(flashMap, request, response);
+			
+			response.sendRedirect(request.getContextPath().equals("") ? "/" : request.getContextPath());
+			
+			// case 1) contextPath 가 ""일 경우
+			// /member/myinfo.do url 요청시 로그인되어있지 않을 경우 ""과 같은 url 재요청 됨
+			// /member/	url 재요청됨
+			
+			// case 2) contextPath 가 "/boot"일 경우
+			// /member/myinfo.do url 요청시 로그인되어있지 않을 경우 "/boot"과 같은 url 재요청 됨
+			// /boot	url 재요청됨
+			
+			return false; // Controller 실행되지 않도록
+		}
+				
+
+	}
+	
+}

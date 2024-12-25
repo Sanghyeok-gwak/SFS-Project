@@ -29,7 +29,7 @@ END;
 /
 ------------------------------------------------------------------
 
-create TABLE "MEMBER" (
+CREATE TABLE "MEMBER" (
 	"MEM_NO"	VARCHAR2(50)		NOT NULL,
 	"MEM_PWD"	CLOB		NULL,
 	"MEM_NAME"	VARCHAR2(50)		NULL,
@@ -43,7 +43,8 @@ create TABLE "MEMBER" (
 	"ACCOUNT"	VARCHAR2(100)		NULL,
 	"PROFILE_URL"	VARCHAR2(500)		NULL,
 	"DEPT_CODE"	VARCHAR2(10)		NULL,
-	"POS_CODE"	VARCHAR2(10)		NULL
+	"POS_CODE"	VARCHAR2(10)		NULL,
+	"SALARY"	NUMBER		NULL
 );
 
 COMMENT ON COLUMN "MEMBER"."MEM_NO" IS '사원번호';
@@ -73,6 +74,8 @@ COMMENT ON COLUMN "MEMBER"."PROFILE_URL" IS '사원프로필사진';
 COMMENT ON COLUMN "MEMBER"."DEPT_CODE" IS '직급코드';
 
 COMMENT ON COLUMN "MEMBER"."POS_CODE" IS '부서코드';
+
+COMMENT ON COLUMN "MEMBER"."SALARY" IS '급여';
 
 CREATE TABLE "ATTACHMENT" (
 	"FILE_NO"	NUMBER		NOT NULL,
@@ -560,3 +563,30 @@ ALTER TABLE "BOARD" ADD CONSTRAINT "PK_BOARD" PRIMARY KEY (
 	"BOARD_NO"
 );
 
+
+
+insert into member values ('S2024001','123','김영욱','010-1234-5678','tklrjn0731@gmail.com','서울시 동작구
+','2024-12-23',null,'Y','950731-1456327','123456-01-12345789',null,'dp001','po001',5000000);
+
+insert into common_code (cd,nm) values('PO001','대표');
+insert into common_code (cd,nm) values('PO002','이사');
+insert into common_code (cd,nm) values('PO003','수석');
+insert into common_code (cd,nm) values('PO004','책임');
+insert into common_code (cd,nm) values('PO005','사원');
+
+insert into common_code (cd,nm) values('DP001','인사');
+insert into common_code (cd,nm) values('DP002','개발');
+insert into common_code (cd,nm) values('DP003','영업');
+
+insert into position values('PO001',1);
+insert into position values('PO002',2);
+insert into position values('PO003',3);
+insert into position values('PO004',4);
+insert into position values('PO005',5);
+
+insert into department values('DP001');
+insert into department values('DP002');
+insert into department values('DP003');
+
+
+commit;

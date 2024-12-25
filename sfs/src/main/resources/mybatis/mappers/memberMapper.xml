@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+
+<resultMap id="memberResultMap" type="MemberDto">
+		<result column="MEM_NO" property="memNo" />
+		<result column="MEM_NAME" property="memName" />
+		<result column="mem_pwd" property="memPwd" />
+		<result column="MEM_PHONE" property="memPhone" />
+		<result column="MEM_EMAIL" property="memEmail" />
+		<result column="MEM_ADDR" property="memAddr" />
+		<result column="hire_date" property="hireDate" />
+		<result column="end_date" property="endDate" />
+		<result column="status" property="status" />
+		<result column="mem_ssn" property="memSSN" />
+		<result column="account" property="account" />
+		<result column="profile_url" property="profileURL" />
+		<result column="DEPT_CODE" property="deptCode" />
+		<result column="POS_CODE" property="posCode" />
+		<result column="pos_name" property="posName" />
+		<result column="dept_name" property="deptName" />
+		<result column="salary" property="salary" />
+		
+	</resultMap>
+
+
+<select id="selectMember" resultMap="memberResultMap">
+select MEM_NO
+			,MEM_PWD
+			,MEM_NAME
+			,MEM_PHONE
+			,MEM_EMAIL
+			,MEM_ADDR
+			,HIRE_DATE
+			,END_DATE
+			,STATUS
+			,MEM_SSN
+			,ACCOUNT
+			,PROFILE_URL
+			,M.DEPT_CODE
+			,M.POS_CODE
+      ,CC.NM DEPT_NAME
+      ,CCC.NM POS_NAME
+			,SALARY
+  from
+  		member M
+  JOIN  DEPARTMENT D ON (M.DEPT_CODE = D.DEPT_CODE)
+  JOIN  COMMON_CODE CC ON (D.DEPT_CODE = CC.CD)
+  JOIN  POSITION P ON (M.POS_CODE = P.POS_CODE)
+  JOIN  COMMON_CODE CCC ON (P.POS_CODE = CCC.CD)
+ where
+ 		mem_no = #{memNo}
+ 	 and status != 'N'
+	
+
+</select>
+
+
+
+
+
+
+
+
+</mapper>
