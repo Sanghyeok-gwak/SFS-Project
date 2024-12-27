@@ -36,5 +36,8 @@ public class MemberDto {
 	private String deptName;
 	private String posName;
 	
-
+	// 프로젝트 참여자 관련 필드
+	private int proNo; //프로젝트 번호
+	private String role; // 역할(팀장|팀원)
+	
 }
