@@ -19,7 +19,7 @@ public class LoginCheckInterceptor implements HandlerInterceptor{
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("loginUser") != null) { 
-			return true; 
+			return true;
 		}else { 
 			// RedirectAttributes의 대안
 			FlashMap flashMap = new FlashMap();
