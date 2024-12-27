@@ -71,13 +71,18 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-          
-
+				 <!-- nav 시작 -->
+						<jsp:include page="/WEB-INF/views/common/nav.jsp" />
+					<!-- nav 끝 -->
+					
+					
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
-
             <div class="container-xxl flex-grow-1 container-p-y">
+            
+            
+            
               <h4 class="py-4 mb-6">대시보드</h4>
               <p>
                 Sample page.<br />For more layout options, <a href="" target="_blank" class="fw-medium"></a> refer
@@ -88,6 +93,9 @@
                   >Layout docs</a
                 >.
               </p>
+              
+              
+              
             </div>
             <!-- / Content -->
 

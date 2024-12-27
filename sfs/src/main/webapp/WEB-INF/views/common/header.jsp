@@ -8,11 +8,12 @@
        alert("${alertMsg}");
     </script>
 </c:if>
- 
+ <!-- jQUERY 사용 -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
  
   <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-      <a href="index.html" class="app-brand-link">
+      <a href="${ contextPath }/member/dashboard.do" class="app-brand-link">
         <span class="app-brand-logo demo">
           <img src="https://i.ibb.co/ZSMn21Q/global-services-12876203.png" style="width: 100%;">
         </span>
@@ -44,7 +45,7 @@
         </a>
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="#" class="menu-link" id="signup">
+            <a href="${contextPath }/member/signUpMember.do" class="menu-link" id="signup">
               <div data-i18n="직원 등록">직원 등록</div> 
             </a>
           </li>
@@ -80,7 +81,8 @@
           </li>
         </ul>
       </li>
-      
+         
+
       
     </ul>
 </aside>
