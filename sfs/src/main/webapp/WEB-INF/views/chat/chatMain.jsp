@@ -246,7 +246,7 @@ Hey there, we’re just writing to let you know that you’ve been subscribed to
                       <!-- Chats -->
                       <ul class="list-unstyled chat-contact-list py-2 mb-0" id="chat-list">
                         <li class="chat-contact-list-item chat-contact-list-item-title mt-0">
-                          <h5 class="text-primary mb-0">Chats</h5>
+                          <h5 class="text-primary mb-0">채팅</h5>
                         </li>
                         <li class="chat-contact-list-item chat-list-item-0 d-none">
                           <h6 class="text-muted mb-0">No Chats Found</h6>
@@ -299,7 +299,7 @@ Hey there, we’re just writing to let you know that you’ve been subscribed to
                       <!-- Contacts -->
                       <ul class="list-unstyled chat-contact-list mb-0 py-2" id="contact-list">
                         <li class="chat-contact-list-item chat-contact-list-item-title mt-0">
-                          <h5 class="text-primary mb-0">Contacts</h5>
+                          <h5 class="text-primary mb-0">사원</h5>
                         </li>
                         <li class="chat-contact-list-item contact-list-item-0 d-none">
                           <h6 class="text-muted mb-0">No Contacts Found</h6>
@@ -310,22 +310,12 @@ Hey there, we’re just writing to let you know that you’ve been subscribed to
                               <img src="../../assets/img/avatars/4.png" alt="Avatar" class="rounded-circle" />
                             </div>
                             <div class="chat-contact-info flex-grow-1 ms-4">
-                              <h6 class="chat-contact-name text-truncate m-0 fw-normal">Natalie Maxwell</h6>
-                              <small class="chat-contact-status text-truncate">UI/UX Designer</small>
+                              <h6 class="chat-contact-name text-truncate m-0 fw-normal">박시우</h6>
+                              <small class="chat-contact-status text-truncate">개발팀</small>
                             </div>
                           </a>
                         </li>
-                        <li class="chat-contact-list-item">
-                          <a class="d-flex align-items-center">
-                            <div class="flex-shrink-0 avatar">
-                              <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                            </div>
-                            <div class="chat-contact-info flex-grow-1 ms-4">
-                              <h6 class="chat-contact-name text-truncate m-0 fw-normal">Jess Cook</h6>
-                              <small class="chat-contact-status text-truncate">Business Analyst</small>
-                            </div>
-                          </a>
-                        </li>
+                       
                         <li class="chat-contact-list-item">
                           <a class="d-flex align-items-center">
                             <div class="avatar d-block flex-shrink-0">
@@ -456,12 +446,7 @@ Hey there, we’re just writing to let you know that you’ve been subscribed to
                             </div>
                           </div>
                           <div class="d-flex align-items-center">
-                            <i
-                              class="ti ti-phone ti-md cursor-pointer d-sm-inline-flex d-none me-1 btn btn-sm btn-text-secondary text-secondary btn-icon rounded-pill"></i>
-                            <i
-                              class="ti ti-video ti-md cursor-pointer d-sm-inline-flex d-none me-1 btn btn-sm btn-text-secondary text-secondary btn-icon rounded-pill"></i>
-                            <i
-                              class="ti ti-search ti-md cursor-pointer d-sm-inline-flex d-none me-1 btn btn-sm btn-text-secondary text-secondary btn-icon rounded-pill"></i>
+                           
                             <div class="dropdown">
                               <button
                                 class="btn btn-sm btn-icon btn-text-secondary text-secondary rounded-pill dropdown-toggle hide-arrow"
