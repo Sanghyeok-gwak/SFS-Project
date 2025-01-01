@@ -81,6 +81,15 @@
           </li>
         </ul>
       </li>
+      
+       <li class="menu-item" id="chatSide" >
+        <a href="#" class="menu-link">
+          <i class="menu-icon tf-icons ti ti-user"></i>
+          <div data-i18n="메신저">메신저</div>
+        </a>
+      </li>
+      
+      
          
 
       
