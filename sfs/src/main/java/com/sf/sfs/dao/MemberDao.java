@@ -16,6 +16,14 @@ public class MemberDao {
 	public MemberDto selectMember(MemberDto m) {
 		return sqlSession.selectOne("memberMapper.selectMember",m);
 	}
+
+	public String memNo() {
+		return sqlSession.selectOne("memberMapper.memNo");
+	}
+
+	public int insertMember(MemberDto m) {
+		return sqlSession.insert("memberMapper.insertMember",m);
+	}
 	
 	
 	

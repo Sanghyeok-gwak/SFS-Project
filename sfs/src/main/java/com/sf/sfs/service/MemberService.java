@@ -6,6 +6,10 @@ public interface MemberService {
 
 	// 로그인
 	MemberDto selectMember(MemberDto m);
+
+	String memNo();
+
+	int insertMember(MemberDto m);
 	
 	
 }

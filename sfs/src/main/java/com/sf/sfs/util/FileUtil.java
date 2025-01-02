@@ -8,8 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+
+@Component
 public class FileUtil {
 	public Map<String, String> fileupload(MultipartFile uploadFile,String folderName) {
 		

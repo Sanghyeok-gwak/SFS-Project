@@ -49,16 +49,56 @@ select MEM_NO
   left JOIN  POSITION P ON (M.POS_CODE = P.POS_CODE)
   left JOIN  COMMON_CODE CCC ON (P.POS_CODE = CCC.CD)
  where
- 		mem_no = 'S2024001'
+ 		mem_no = #{memNo}
  	 and status != 'N'
 	
 
 </select>
 
+<select id="memNo" resultType="string">
+select 'S' || to_char(sysdate, 'YYYY') || lpad(count(substr(mem_no, 1, 9)) + 1, 3, '0')
+  from member
+ where substr(mem_no, 2, 4) = to_char(sysdate, 'YYYY')
+</select>
 
 
-
-
+<insert id="insertMember">
+insert
+	into
+	member
+			(
+				mem_No
+			,	mem_Pwd
+			,	MEM_NAME
+			,	MEM_PHONE
+			,	MEM_EMAIL
+			,	MEM_ADDR
+			,	HIRE_DATE
+			, MEM_SSN
+			, ACCOUNT
+			,	PROFILE_URL
+			, DEPT_CODE
+			,	POS_CODE
+			,	SALARY
+			)
+			values
+			(
+				#{memNo}
+			,	#{memPwd}
+			,	#{memName}
+			,	#{memPhone}
+			,	#{memEmail}
+			,	#{memAddr}
+			,	#{hireDate}
+			,	#{memSSN}
+			, #{account}
+			, #{profileURL}
+			, #{deptCode}
+			, #{posCode}
+			, #{salary}
+			)
+			
+</insert>
 
 
 
